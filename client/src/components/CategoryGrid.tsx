@@ -1,8 +1,7 @@
-import React from 'react';
 import { categories } from '../data/mockData';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
-const CategoryGrid: React.FC = () => {
+const CategoryGrid = () => {
   return (
     <section className="py-8">
       <div className="container mx-auto px-4">

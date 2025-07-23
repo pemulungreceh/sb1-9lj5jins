@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { books } from '../data/mockData';
 import BookCard from './BookCard';
 

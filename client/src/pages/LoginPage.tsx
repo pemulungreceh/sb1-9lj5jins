@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useLocation } from 'wouter';
 import { Eye, EyeOff, BookOpen } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useSettings } from '../contexts/SettingsContext';
@@ -15,7 +15,7 @@ const LoginPage: React.FC = () => {
 
   const { login } = useAuth();
   const { settings } = useSettings();
-  const navigate = useNavigate();
+  const [, setLocation] = useLocation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const LoginPage: React.FC = () => {
     try {
       const success = await login(formData.username, formData.password);
       if (success) {
-        navigate('/');
+        setLocation('/');
       } else {
         setError('Username atau password salah');
       }

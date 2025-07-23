@@ -1,4 +1,4 @@
-import React from 'react';
+
 import HeroSection from '../components/HeroSection';
 import CategoryGrid from '../components/CategoryGrid';
 import FeaturedBooks from '../components/FeaturedBooks';

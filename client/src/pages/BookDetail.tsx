@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useParams } from 'wouter';
+import { Link } from 'wouter';
 import { Star, MapPin, ShoppingCart, Heart, Share, ChevronRight, Minus, Plus } from 'lucide-react';
 import { books, vendors } from '../data/mockData';
 import { useCart } from '../contexts/CartContext';

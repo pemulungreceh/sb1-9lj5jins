@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, Switch } from 'wouter';
 import { AuthProvider } from './contexts/AuthContext';
 import { SettingsProvider } from './contexts/SettingsContext';
 import { CartProvider } from './contexts/CartContext';
@@ -22,31 +21,31 @@ function App() {
       <SettingsProvider>
         <ThemeProvider>
           <CartProvider>
-            <Router>
-              <div className="min-h-screen flex flex-col">
-                <Routes>
-                  <Route path="/login" element={<LoginPage />} />
-                  <Route path="/admin" element={<AdminDashboard />} />
-                  <Route path="/admin/products" element={<AdminProducts />} />
-                  <Route path="/admin/users" element={<AdminUsers />} />
-                  <Route path="/seller" element={<SellerDashboard />} />
-                  <Route path="/customer" element={<CustomerDashboard />} />
-                  <Route path="/*" element={
+            <div className="min-h-screen flex flex-col">
+              <Switch>
+                <Route path="/login" component={LoginPage} />
+                <Route path="/admin" component={AdminDashboard} />
+                <Route path="/admin/products" component={AdminProducts} />
+                <Route path="/admin/users" component={AdminUsers} />
+                <Route path="/seller" component={SellerDashboard} />
+                <Route path="/customer" component={CustomerDashboard} />
+                <Route>
+                  {() => (
                     <>
                       <Header />
                       <main className="flex-1">
-                        <Routes>
-                          <Route path="/" element={<HomePage />} />
-                          <Route path="/book/:id" element={<BookDetail />} />
-                          <Route path="/cart" element={<CartPage />} />
-                        </Routes>
+                        <Switch>
+                          <Route path="/" component={HomePage} />
+                          <Route path="/book/:id" component={BookDetail} />
+                          <Route path="/cart" component={CartPage} />
+                        </Switch>
                       </main>
                       <Footer />
                     </>
-                  } />
-                </Routes>
-              </div>
-            </Router>
+                  )}
+                </Route>
+              </Switch>
+            </div>
           </CartProvider>
         </ThemeProvider>
       </SettingsProvider>

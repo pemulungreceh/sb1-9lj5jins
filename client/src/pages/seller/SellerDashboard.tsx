@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Package, ShoppingCart, TrendingUp, Eye, Plus } from 'lucide-react';
 import { sellerAPI } from '../../services/api';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 interface SellerStats {
   totalProducts: number;

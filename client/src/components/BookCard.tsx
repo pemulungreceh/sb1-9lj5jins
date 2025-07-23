@@ -1,8 +1,7 @@
-import React from 'react';
 import { Star, MapPin, ShoppingCart } from 'lucide-react';
 import { Book } from '../types';
 import { useCart } from '../contexts/CartContext';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 interface BookCardProps {
   book: Book;

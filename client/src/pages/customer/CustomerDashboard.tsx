@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ShoppingBag, Heart, Clock, Star, Package, Truck } from 'lucide-react';
 import { customerAPI } from '../../services/api';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 interface CustomerStats {
   totalOrders: number;
